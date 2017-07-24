@@ -1,0 +1,57 @@
+/*Codes for CLIK device. 
+ * MIT License
+
+Copyright (c) [2017] [Petar Mihalak] [petar dot mihalak at gmail dot com]
+
+Permission is hereby granted, free of charge,
+to any person obtaining a copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+This code works just like the ordinary CLIK - BLINK_ONBOARD but in this case LED on pin 13 (bulit-in LED) can be controlled
+via mobile phone application BLYNK. CLIK user manual can give you more information on how to download, setup and and use BLYNK app.
+If you find it hard to understand BLYNK application just from our user manual, you can check out their website http://www.blynk.cc/getting-started/ where
+they go into details on how to use blynk.
+Petar Mihalak, 2017.
+*/
+
+
+/* Comment this out to disable prints and save space */
+#define BLYNK_PRINT Serial
+
+
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+// You should get Auth Token in the Blynk App.
+// Go to the Project Settings (nut icon).
+char auth[] = "AuthToken";
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "YourWifiName";
+char pass[] = "YourWifiPassword";
+
+void setup()
+{
+  // Debug console
+  Serial.begin(9600);
+
+  Blynk.begin(auth, ssid, pass);
+  // You can also specify server:
+  //Blynk.begin(auth, ssid, pass, "blynk-cloud.com", 8442);
+  //Blynk.begin(auth, ssid, pass, IPAddress(192,168,1,100), 8442);
+}
+
+void loop()
+{
+  Blynk.run();
+}
