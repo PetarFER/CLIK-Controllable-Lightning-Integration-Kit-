@@ -45,16 +45,16 @@ char ssid[] = "YourWifiName";
 char pass[] = "YourWifiPassword";
 
 
-// Use Virtual pin 1 for uptime display
+// Use Virtual pin 1 for temperature display
 #define PIN_TEMP V1
 
-// Use Virtual pin 2 for uptime display
+// Use Virtual pin 2 for pressure display
 #define PIN_PRESSURE V2
 
-// Use Virtual pin 3 for uptime display
+// Use Virtual pin 3 for pressure display
 #define PIN_PRESSURE_ALTITUDE V3
 
-// Use Virtual pin 4 for uptime display
+// Use Virtual pin 4 for altitude display
 #define PIN_ALTITUDE_PRESSURE V4
 
 int relay1 = 12;
